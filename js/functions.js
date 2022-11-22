@@ -87,7 +87,8 @@ calculateTip(50, 0.18);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-
+let bill = prompt('Total bill amount?');
+alert(calculateTip(bill));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
