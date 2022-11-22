@@ -59,6 +59,7 @@ console.log( analyzeColor(randomColor) );
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
