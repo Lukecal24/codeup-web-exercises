@@ -21,20 +21,20 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-let color = "red";
-analyzeColor(color);
-console.log(analyzeColor(color))
-
-function analyzeColor(color){
-    if (color === "red"){
-        return ("Strawberries are red!");
-    } else if(color === "blue"){
-        return ("Blue like the sky!");
-    }
-    else {
-        return ("That isn't red or blue!!!");
-    }
-}
+// let color = "red";
+// analyzeColor(color);
+// console.log(analyzeColor(color))
+//
+// function analyzeColor(color){
+//     if (color === "red"){
+//         return ("Strawberries are red!");
+//     } else if(color === "blue"){
+//         return ("Blue like the sky!");
+//     }
+//     else {
+//         return ("That isn't red or blue!!!");
+//     }
+// }
 
 
 // Don't change the next two lines!
@@ -50,15 +50,39 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 
-console.log(randomColor);
-console.log( analyzeColor(randomColor) );
+// console.log(randomColor);
+// console.log( analyzeColor(randomColor) );
 
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+let color = "red";
+//analyzeColor(color);
+console.log(switch(color));
+switch(color){
+    case "Strawberries are red!" :
+        break;
+    case "Blue like the sky!" :
+        break;
+    default : "That isn't red or blue!!!"
+        break;
+}
 
+// var pizzaPreference = prompt("What kind of pizza do you like?");
+//
+// switch(pizzaPreference) {
+//     case "pineapple and hot sauce":
+//         alert("What a coincidence, that's my favorite!");
+//         break;
+//     case "cheese":
+//         alert("Just plain cheese? Okay...");
+//         break;
+//     default:
+//         alert(pizzaPreference + " isn't my favorite, but let's order some!");
+//         break;
+// }
 
 /**
  * TODO:
