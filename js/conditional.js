@@ -121,6 +121,31 @@ console.log(analyzeColor(pickColor));
  * return value.
  */
 
+function calculateTotal(luckyNumber,totalAmount) {
+
+    switch () {
+        case 0 :
+            return totalAmount
+            break;
+        case 1 :
+            return
+            break;
+        case 2 :
+            return
+            break;
+        case 3 :
+            return
+            break;
+        case 4 :
+            return
+            break;
+        case 5 :
+            return
+            break;
+
+    }
+}
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
