@@ -59,9 +59,10 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 let color = "red";
-//analyzeColor(color);
+// analyzeColor(color);
 console.log(switch(color));
-switch(color){
+
+switch (color){
     case "Strawberries are red!" :
         break;
     case "Blue like the sky!" :
