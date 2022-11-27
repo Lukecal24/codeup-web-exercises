@@ -58,17 +58,21 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-let color = "red";
+let message = console.log(analyzeColor(randomColor))
 // analyzeColor(color);
-console.log(switch(color));
+function analyzeColor(color) {
 
-switch (color){
-    case "Strawberries are red!" :
-        break;
-    case "Blue like the sky!" :
-        break;
-    default : "That isn't red or blue!!!"
-        break;
+    switch (color) {
+        case "red" :
+            return "Strawberries are red!"
+            break;
+        case "blue" :
+            return "Blue like the sky!"
+            break;
+        default :
+            return "That isn't red or blue!!!"
+            break;
+    }
 }
 
 // var pizzaPreference = prompt("What kind of pizza do you like?");
