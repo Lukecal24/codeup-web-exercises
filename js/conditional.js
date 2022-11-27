@@ -96,6 +96,9 @@ function analyzeColor(color) {
  * function to show it to the user.
  */
 
+var pickColor = prompt("Pick a color");
+console.log(analyzeColor(pickColor));
+
 /* ########################################################################## */
 
 /**
