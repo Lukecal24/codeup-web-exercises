@@ -96,8 +96,8 @@ function analyzeColor(color) {
  * function to show it to the user.
  */
 
-var pickColor = prompt("Pick a color");
-console.log(analyzeColor(pickColor));
+// var pickColor = prompt("Pick a color");
+// console.log(analyzeColor(pickColor));
 
 /* ########################################################################## */
 
@@ -120,27 +120,33 @@ console.log(analyzeColor(pickColor));
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+let discount =
 
 function calculateTotal(luckyNumber,totalAmount) {
 
-    switch () {
+    switch (luckyNumber) {
         case 0 :
             return totalAmount
             break;
         case 1 :
-            return
+            discount = (totalAmount * 0.1);
+            return calculateTotal
             break;
         case 2 :
-            return
+            discount = (totalAmount * 0.25);
+            return calculateTotal
             break;
         case 3 :
-            return
+            discount = (totalAmount * 0.35);
+            return calculateTotal
             break;
         case 4 :
-            return
+            discount = (totalAmount * 0.50);
+            return calculateTotal
             break;
         case 5 :
-            return
+            discount = (totalAmount * 1);
+            return calculateTotal
             break;
 
     }
