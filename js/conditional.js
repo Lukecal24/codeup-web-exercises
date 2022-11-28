@@ -120,7 +120,8 @@ function analyzeColor(color) {
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-let discount =
+let discount = 0;
+console.log(calculateTotal (3, 65) );
 
 function calculateTotal(luckyNumber,totalAmount) {
 
@@ -130,23 +131,26 @@ function calculateTotal(luckyNumber,totalAmount) {
             break;
         case 1 :
             discount = (totalAmount * 0.1);
-            return calculateTotal
+            return (totalAmount - discount);
             break;
         case 2 :
             discount = (totalAmount * 0.25);
-            return calculateTotal
+            return (totalAmount - discount);
             break;
         case 3 :
             discount = (totalAmount * 0.35);
-            return calculateTotal
+            return (totalAmount - discount);
             break;
         case 4 :
             discount = (totalAmount * 0.50);
-            return calculateTotal
+            return (totalAmount - discount);
             break;
         case 5 :
             discount = (totalAmount * 1);
-            return calculateTotal
+            return (totalAmount - discount);
+            break;
+        default:
+            return "default"
             break;
 
     }
@@ -161,7 +165,18 @@ function calculateTotal(luckyNumber,totalAmount) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+
+// let myTotal = prompt( "What is your total bill?");
+
+// alert(calculateTotal(luckyNumber,myTotal));
+// alert(calculateTotal (prompt) );
+
+
+// console.log(calculateTotal (luckyNumber,myTotal) )
+// alert("Your luck number was " + luckyNumber + "!!!" + "The total before discount was " + myTotal + "." +
+//     "The total after discount is " + calculateTotal(luckyNumber,myTotal) + "!!!");
 
 /**
  * TODO:
@@ -181,3 +196,26 @@ function calculateTotal(luckyNumber,totalAmount) {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+confirm("Would you like to enter a number?");
+let userNumber = prompt("Pick a number");
+console.log(prompt);
+console.log(yourNumber(userNumber) );
+// alert(userNumber % 2 == 0);
+// alert();
+// alert();
+
+function yourNumber(userNumber) {
+
+    switch (userNumber) {
+        case userNumber % 2 == 0 :
+            alert("This number is even");
+            break;
+        case userNumber % 2 == 1 :
+            alert ("The number is odd");
+            break;
+        case userNumber === "":
+            alert("Incorrect data type");
+            break;
+    }
+}
