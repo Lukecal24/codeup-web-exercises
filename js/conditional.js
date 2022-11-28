@@ -96,7 +96,7 @@ function analyzeColor(color) {
  * function to show it to the user.
  */
 
-// var pickColor = prompt("Pick a color");
+//let pickColor = prompt("Pick a color");
 // console.log(analyzeColor(pickColor));
 
 /* ########################################################################## */
@@ -168,15 +168,15 @@ function calculateTotal(luckyNumber,totalAmount) {
 var luckyNumber = Math.floor(Math.random() * 6);
 
 
-// let myTotal = prompt( "What is your total bill?");
+let myTotal = prompt( "What is your total bill?");
 
 // alert(calculateTotal(luckyNumber,myTotal));
 // alert(calculateTotal (prompt) );
 
 
-// console.log(calculateTotal (luckyNumber,myTotal) )
-// alert("Your luck number was " + luckyNumber + "!!!" + "The total before discount was " + myTotal + "." +
-//     "The total after discount is " + calculateTotal(luckyNumber,myTotal) + "!!!");
+console.log(calculateTotal (luckyNumber,myTotal) )
+alert("Your lucky number was " + luckyNumber + "!!!" + "The total before discount was " + myTotal + "." +
+    "The total after discount is " + calculateTotal(luckyNumber,myTotal) + "!!!");
 
 /**
  * TODO:
@@ -197,25 +197,55 @@ var luckyNumber = Math.floor(Math.random() * 6);
  * HINT: The way we prompt for a value could be improved
  */
 
-confirm("Would you like to enter a number?");
-let userNumber = prompt("Pick a number");
-console.log(prompt);
-console.log(yourNumber(userNumber) );
+let userConfirm = confirm("Would you like to enter a number?");
+let userNumber;
+if(userConfirm){
+    userNumber = prompt("Pick a number");
+    if( !isNaN (userNumber) ){
+        if(userNumber % 2 === 0) {
+            alert("This number is even")
+        } else
+            {
+                alert("The number is odd")
+            }
+            let plus100 = parseFloat(userNumber) + 100;
+            alert("The number plus 100 equals " + plus100);
+
+            if (userNumber > 0) {
+                alert("The number is positive");
+            } else {
+                alert("The number is negative")
+            }
+        } else {
+            alert("Incorrect datatype provided")
+    }
+}
+
+function isEven(num){
+    return num % 2 === 0;
+}
+
+function add100(num){
+    return parseFloat(num) + 100;
+}
+
+// console.log(userNumber);
+// console.log(yourNumber(userNumber) );
 // alert(userNumber % 2 == 0);
 // alert();
 // alert();
 
-function yourNumber(userNumber) {
-
-    switch (userNumber) {
-        case userNumber % 2 == 0 :
-            alert("This number is even");
-            break;
-        case userNumber % 2 == 1 :
-            alert ("The number is odd");
-            break;
-        case userNumber === "":
-            alert("Incorrect data type");
-            break;
-    }
-}
+// function yourNumber(userNumber) {
+//
+//     switch (userNumber) {
+//         case userNumber % 2 == 0 :
+//             alert("This number is even");
+//             break;
+//         case userNumber % 2 == 1 :
+//             alert ("The number is odd");
+//             break;
+//         case userNumber === "":
+//             alert("Incorrect data type");
+//             break;
+//     }
+// }
