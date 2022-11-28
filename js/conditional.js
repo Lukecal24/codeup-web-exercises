@@ -229,6 +229,10 @@ function add100(num){
     return parseFloat(num) + 100;
 }
 
+function isPositive(num){
+    return num > 0;
+}
+
 // console.log(userNumber);
 // console.log(yourNumber(userNumber) );
 // alert(userNumber % 2 == 0);
