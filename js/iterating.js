@@ -53,22 +53,43 @@ console.log(names.length);
      */
 const numbers = [1,2,3,4,5]
 
-    function first(element){
-        return element[0];
+    function first(arr){
+        return arr[0];
     }
 
-    function second(element){
-        return element[1];
+    function second(arr){
+        return arr[1];
     }
 
-    function fifth(element){
-        return element[4];
+    function fifth(arr){
+        return arr[arr.length -1];
     }
 
 
     console.log(first(numbers));
     console.log(second(numbers));
     console.log(fifth(numbers));
+
+
+
+
+//ARRAY BONUSES
+//     1. Create an array of 10 foods. Write using a for loop, write logic that will log only the foods that start with a vowel. Write another solution using a forEach loop.
+
+
+
+//     2. Write a function, addEvenNums, that takes in an array of numbers and adds up only the even numbers in the array and returns the sum of the even numbers. Assume any array inputs will only contain valid number elements and be non-empty.
+
+
+
+//     3. Write a function, checkIfNumInArray, that takes in an array of numbers and a number and returns the string
+
+
+
+// ‘input num in input array’ if the second argument is an element in the first argument array
+//     otherwise, the function should return the string ‘input num NOT in input array’
+
+
 
 
 
