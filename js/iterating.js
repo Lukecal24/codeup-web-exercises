@@ -75,7 +75,24 @@ const numbers = [1,2,3,4,5]
 
 //ARRAY BONUSES
 //     1. Create an array of 10 foods. Write using a for loop, write logic that will log only the foods that start with a vowel. Write another solution using a forEach loop.
-
+const foods = [
+    'pie',
+    'pizza',
+    'tortas',
+    'eggs', //vowel
+    'chips',
+    'apple', //vowel
+    'hamburger',
+    'pineapple',
+    'pringles',
+    'bread'];
+for(let i = 0; i < foods.length; i +=1){
+    let firstChar = foods[i][0];
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    if(vowels.includes(firstChar)){
+        console.log(foods[i]); // if the first char is a vowel
+    }
+}
 
 
 //     2. Write a function, addEvenNums, that takes in an array of numbers and adds up only the even numbers in the array and returns the sum of the even numbers. Assume any array inputs will only contain valid number elements and be non-empty.
