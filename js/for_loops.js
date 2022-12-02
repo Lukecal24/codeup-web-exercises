@@ -16,23 +16,26 @@ showMultiplicationTable(7)
 // ...
 
 
-//function getRandomNum(min, max){
-// return Math.floor(Math.random() * (max - min + 1) + min)
-// }
-let randomNumber =  Math.floor(Math.random() * 200) + 20
-console.log(randomNumber)
-
-function isOddEven(){
-    for (let i = 1; i< 11; i++) {
-        randomNumber =  Math.floor(Math.random() * 200) + 20
-        if (randomNumber % 2 === 0) {
-            console.log(randomNumber + " is even");
-        } else {
-            console.log(randomNumber + " is odd");
-        }
-    }
+function getRandomNum(min, max){
+return Math.floor(Math.random() * (max - min + 1) + min)
 }
-console.log(isOddEven(randomNumber));
+
+// the above is function to generate random number
+
+// let randomNumber =  Math.floor(Math.random() * 200) + 20
+// console.log(randomNumber)
+//
+// function isOddEven(){
+//     for (let i = 1; i< 11; i++) {
+//         randomNumber =  Math.floor(Math.random() * 200) + 20
+//         if (randomNumber % 2 === 0) {
+//             console.log(randomNumber + " is even");
+//         } else {
+//             console.log(randomNumber + " is odd");
+//         }
+//     }
+// }
+// console.log(isOddEven(randomNumber));
 // % 2 === 0
 
 // 1
