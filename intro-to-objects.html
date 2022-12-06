@@ -185,22 +185,33 @@
   // 0. log each name
 
 
-  users.forEach(function(name){
-    console.log(name.givenName);
-  });
+  // users.forEach(function(name){
+  //   console.log(name.givenName);
+  // });
+
   // 1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
 
+  // let names = '';
+  //
+  // users.forEach(function(user){
+  //   names += user.givenName + ' ';
+  // });
+  // console.log(names.trim());
 
   // 2. Change the names of all users to "John Doe"
-  users.forEach(function(name){
-    console.log(name.givenName = "John Doe");
+
+  users.forEach(function(user){
+    user.givenName = "John Doe";
   });
-  console.log(users[0].givenName);
+  console.log(users);
+
+
   // 3. Increase the current age of all users by 1
-  users.forEach(function(age){
-    console.log(users.age = + 1);
+
+  users.forEach(function(user){
+    user.age++;
   });
-  console.log(users[0].age);
+  console.log(users);
 
   // Can you accomplish each step using iteration?
 
