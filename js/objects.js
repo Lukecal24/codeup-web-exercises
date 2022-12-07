@@ -73,11 +73,10 @@
         let findDiscount = person.amount * 0.12;
         let finalCost = person.amount - findDiscount;
      if (person.amount > 200){
-         console.log(`${person.name} spent "$"${person.amount}. Your discount was "$"${findDiscount}. The final cost was "$"${finalCost}.`)
+         console.log(`${person.name} spent $${person.amount}. Your discount was $${findDiscount}. The final cost was $${finalCost}.`)
      }else{
-         console.log(`${person.name} your total is "$"${person.amount}.` );
+         console.log(`${person.name} your total is $${person.amount}.` );
      }
-
 
     });
 
@@ -152,12 +151,13 @@ var books = [{
      *      ---
      *      ...
      */
-    books.forEach(function() {
-
-
-
-
+    books.forEach(function(book) {
+        console.log(`Book #${books.indexOf(book)+ 1} `);
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`)
     })
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -168,5 +168,12 @@ var books = [{
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
+
+    function createBook(){
+
+    }
+
 
 })();
