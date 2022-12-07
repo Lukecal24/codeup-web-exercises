@@ -125,6 +125,7 @@ console.log(calculateTotal (3, 65) );
 
 function calculateTotal(luckyNumber,totalAmount) {
 
+
     switch (luckyNumber) {
         case 0 :
             return totalAmount
