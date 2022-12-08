@@ -40,7 +40,6 @@
     // console.log(person.sayHello());
 
 
-
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -66,20 +65,18 @@
 // let template literal do all math
 
 
-
 // let findDiscount = shoppers.amount * 0.12
 
-    shoppers.forEach(function(person){
+    shoppers.forEach(function (person) {
         let findDiscount = person.amount * 0.12;
         let finalCost = person.amount - findDiscount;
-     if (person.amount > 200){
-         console.log(`${person.name} spent $${person.amount}. Your discount was $${findDiscount}. \nThe final cost was $${finalCost}.`)
-     }else{
-         console.log(`${person.name} your total is $${person.amount}.` );
-     }
+        if (person.amount > 200) {
+            console.log(`${person.name} spent $${person.amount}. Your discount was $${findDiscount}. \nThe final cost was $${finalCost}.`)
+        } else {
+            console.log(`${person.name} your total is $${person.amount}.`);
+        }
 
     });
-
 
 
     /** TODO:
@@ -94,33 +91,38 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-let books = [{
-    title: "Fire and Blood",
-    author: {
-        firstName:"George",
-        lastName: "Martin"
-        }
-    }, { title: "Lightning thief",
-        author: {
-        firstName:"Rick",
-            lastName: "Riordan"
-    }
-    }, {   title: "Hunger Games",
-        author: {
-        firstName:"Suzanne",
-            lastName: "Collins"
-    }
-    }, {title: "American Psycho",
-        author: {
-        firstName:"Bret",
-            lastName: "Ellis"
-    }
-    }, { title: "Lord of the rings",
-        author: {
-        firstName:"J",
-            lastName: "Tolkien"
-    }
-    },
+    let books = [
+        {
+            title: "Fire and Blood",
+            author: {
+                firstName: "George",
+                lastName: "Martin"
+            }
+        }, {
+            title: "Lightning thief",
+            author: {
+                firstName: "Rick",
+                lastName: "Riordan"
+            }
+        }, {
+            title: "Hunger Games",
+            author: {
+                firstName: "Suzanne",
+                lastName: "Collins"
+            }
+        }, {
+            title: "American Psycho",
+            author: {
+                firstName: "Bret",
+                lastName: "Ellis"
+            }
+        }, {
+            title: "Lord of the rings",
+            author: {
+                firstName: "JRR",
+                lastName: "Tolkien"
+            }
+        },
     ]
 
     console.log(books[0].title)
@@ -151,10 +153,10 @@ let books = [{
      *      ---
      *      ...
      */
-    books.forEach(function(book) {
-        console.log(`Book #${books.indexOf(book)+ 1} `);
+    books.forEach(function (book) {
+        console.log(`Book # ${books.indexOf(book) + 1} `);
         console.log(`Title: ${book.title}`);
-        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`)
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}\n---`)
     })
 
 
@@ -168,12 +170,39 @@ let books = [{
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
-
-
-    function createBook(){
-
+    // let myAuthor = 'Luke Calderon';
+    // let lukesBook = createBook('Coding for Awesome people', 'Luke Calderon')
+    function createBook(title, author) {
+        let authorArray = author.split(' '); // ["Luke", "Calderon"]
+        let bookObject = {
+            title: title,
+            author: {
+                firstName: authorArray[0],
+                lastName: authorArray[1]
+            }
+        };
+        return bookObject;
     }
+    console.log(createBook('coding book', 'Luke Calderon'));
+    let books2 = [
+        createBook('Fire and Blood', 'George Martin'),
+        createBook('Lightning Thief', 'Rick Riordan'),
+        createBook('Hunger Games', 'Suzanne Collins'),
+        createBook('American Psycho', 'Bret Ellis'),
+        createBook('Lord of the rings', 'JRR Tolkien')
+    ];
+    console.log(books2);
+
+function showBookInfo(book){
+    console.log(`Book # ${books.indexOf(book) + 1} `);
+    console.log(`Title: ${book.title}`);
+    console.log(`Author: ${book.author.firstName} ${book.author.lastName}\n---`);
+
+}
+
+
+
+
 
 
 })();
