@@ -55,7 +55,7 @@
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
+    let shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
@@ -73,7 +73,7 @@
         let findDiscount = person.amount * 0.12;
         let finalCost = person.amount - findDiscount;
      if (person.amount > 200){
-         console.log(`${person.name} spent $${person.amount}. Your discount was $${findDiscount}. The final cost was $${finalCost}.`)
+         console.log(`${person.name} spent $${person.amount}. Your discount was $${findDiscount}. \nThe final cost was $${finalCost}.`)
      }else{
          console.log(`${person.name} your total is $${person.amount}.` );
      }
@@ -94,7 +94,7 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-var books = [{
+let books = [{
     title: "Fire and Blood",
     author: {
         firstName:"George",
