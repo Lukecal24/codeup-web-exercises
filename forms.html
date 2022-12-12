@@ -13,33 +13,44 @@
       <br/>
         <input id="e-mail"
                name="e-mail"
-               type="text"
+               type="email"
                placeholder="ex: myname@example.com">
       <br/>
     <label for="password">Password</label>
     <br/>
     <input id="password"
            name="password"
-           type="text"
+           type="password"
            placeholder="password">
     <h2>Bio</h2>
 
-    <textarea name="bio"
-    placeholder="Bio/Short self description"></textarea>
+      <textarea name="bio" id="bio" cols="30" rows="10"
+      placeholder="Bio/Short self description"></textarea>
 
     <h2>How did you hear about us?</h2>
 
-    Billboard <input type="radio" name="marketing_question" value="a"><br>
-    Radio Advertisement <input type="radio" name="marketing_question" value="b"><br>
-    Internet Advertisement <input type="radio" name="marketing_question" value="c"><br>
-    Other <input type="radio" name="marketing_question" value="d"><br>
+      <label for="billboard">Billboard</label>
+        <input id="billboard" type="radio" value="billboard" name="referral"><br>
+
+      <label for="radio">Radio-ad</label>
+        <input id="radio" type="radio" value="radio" name="referral"><br>
+
+       <label for="internet">Internet-Ad</label>
+        <input id="internet" type="radio" value="internet" name="referral"><br>
+
+       <label for="other">Other</label>
+        <input id="other" type="radio" value="other" name="referral"><br>
 
     <h2>What web browser are you using?</h2>
-    <select name="web_browser">
-      <option value="chrome">Google Chrome</option>
-      <option value="firefox">Firefox</option>
-      <option value="safari">Safari</option>
-    </select>
+
+     <label for="browser">Browser</label>
+        <select name="browser" id="browser">
+            <option value="chrome">Google Chrome</option>
+            <option value="firefox">Firefox</option>
+            <option value="safari">Safari</option>
+        </select>
+
+    <br/>
 
     <button>Submit</button>
   </form>
