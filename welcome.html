@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <title>HTML Exercise</title>
     <link rel="stylesheet" href="./css/style.css"/>
+        <style>
+            h1{
+                text-align: center;
+                color: blue;
+                text-decoration: underline;
+            }
+            body{
+                /*background-color: lightyellow;*/
+                /*background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg");*/
+                /*background-size: 1000px*/
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .cool-background{
+                background-image: url("https://images.immediate.co.uk/production/volatile/sites/4/2021/08/mountains-7ddde89.jpg?quality=90&resize=768,574");
+                background-size: 100%;
+            }
+            .table-style{
+                padding:5px;
+                font-size: 20px;
+            }
+
+            a:visited {
+                color: purple;
+            }
+            a:hover {
+                color: green;
+            }
+            a:active {
+                color: chocolate;
+            }
+        </style>
 </head>
 <body>
+
+<div class="cool-background">
     <header>
       <h1><!--class="fancy-header"-->
         Welcome to Veridian Dynamics!
@@ -60,33 +94,33 @@
            height = "450"/>
 
   <h2>Our Product</h2>
-    <table>
-        <tr>
+    <table class="table-style">
+        <tr class="table-style">
             <th>Plan</th>
             <th>Price</th>
             <th>Features</th>
         </tr>
-        <tr>
-            <td>Starter</td>
-            <td>$99</td>
-            <td>Base Technology</td>
+        <tr class="table-style">
+            <td class="table-style">Starter</td>
+            <td class="table-style">$99</td>
+            <td class="table-style">Base Technology</td>
         </tr>
-        <tr>
-            <td>Advanced</td>
-            <td>$199</td>
-            <td>Additional Features</td>
+        <tr class="table-style">
+            <td class="table-style">Advanced</td>
+            <td class="table-style">$199</td>
+            <td class="table-style">Additional Features</td>
         </tr>
-        <tr>
-            <td>Premium</td>
-            <td>$499</td>
-            <td>Unlimited Support</td>
+        <tr class="table-style">
+            <td class="table-style">Premium</td>
+            <td class="table-style">$499</td>
+            <td class="table-style">Unlimited Support</td>
         </tr>
     </table>
     <p><em>All products come with our quality guarantee&#8482.</em></p>
 
   <h2><a href="#top">Go to top the of page.</a></h2>
 
-
+</div>
 
 </body>
 </html>
