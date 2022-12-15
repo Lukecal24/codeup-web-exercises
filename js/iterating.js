@@ -112,7 +112,4 @@ for(let i = 0; i < foods.length; i +=1){
 
 
 
-
-
-
 })();

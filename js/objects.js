@@ -204,5 +204,121 @@ function showBookInfo(book){
 
 
 
+    // Create a function, findAverageDogAge, that takes in a array of pet objects with age properties and returns the average age of a dog.
+
+    //     const pets = [
+    //     {
+    //         name: 'Sparky',
+    //         type: 'Fish',
+    //         age: 4
+    //     },
+    //     {
+    //         name: 'Mr. Pig',
+    //         type: 'Cat',
+    //         age: 4
+    //     },
+    //     {
+    //         name: 'Bubba',
+    //         type: 'Dog',
+    //         age: 5
+    //     },
+    //     {
+    //         name: 'Pickles',
+    //         type: 'Dog',
+    //         age: 10
+    //     }
+    //
+    // ];
+
+    // findAverageDogAge(pets) // returns 7.5
+
+// function findAverageDogAge(pets)
+//     {
+//         let total = 0
+//         let dogCount = 0
+//         pets.forEach(function (pet, index, array) {
+//             if (pet.type === "Dog") {
+//                 total += pet.age;
+//                 dogCount++;
+//             }
+//         });
+//         return total / dogCount;
+//     }
+//
+//     console.log(findAverageDogAge(pets));
+
+
+
+
+// ================================= WARM UP
+
+    // Create a function, returnPetsWithNoFish, that takes in a array of pet objects and returns an array of pet objects with no pets of type 'Fish'.
+
+        const pets = [
+        {
+            name: 'Sparky',
+            type: 'Fish',
+            age: 4
+        },
+        {
+            name: 'Mr. Pig',
+            type: 'Cat',
+            age: 4
+        },
+        {
+            name: 'Bubba',
+            type: 'Dog',
+            age: 5
+        },
+        {
+            name: 'Beans',
+            type: 'Dog',
+            age: 3
+        },
+        {
+            name: 'Mr. Salmon',
+            type: 'Fish',
+            age: 1
+        }
+    ];
+
+    returnPetsWithNoFish(pets) // returns...
+
+    function returnPetsWithNoFish(pets)
+    {
+        let noFishPets = []
+
+        for(let i = 0 ; i < pets.length; i++){
+            let pet = pets[i];
+            if (pet.type !== "Fish") {
+                noFishPets.push(pet);
+            }
+        }
+        return noFishPets;
+    }
+
+    console.log(returnPetsWithNoFish(pets));
+
+
+
+        // [
+        // {
+        //     name: 'Mr. Pig',
+        //     type: 'Cat',
+        //     age: 4
+        // },
+        //     {
+        //         name: 'Bubba',
+        //         type: 'Dog',
+        //         age: 5
+        //     },
+        //     {
+        //         name: 'Beans',
+        //         type: 'Dog',
+        //         age: 3
+        //     }
+        // ]
+
+
 
 })();

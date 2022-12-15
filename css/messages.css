@@ -10,8 +10,8 @@ body, html {
 .message{
     margin: 0.5em;
     padding: 0.5em;
-    border: solid;
-    border-color: rgb(215,217,222);
+    border: 1px solid lightgrey;
+    /*border-color: rgb(215,217,222);*/
     border-radius: 8px;
 }
 
