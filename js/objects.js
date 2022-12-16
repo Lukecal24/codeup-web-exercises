@@ -254,6 +254,77 @@ function showBookInfo(book){
 
     // Create a function, returnPetsWithNoFish, that takes in a array of pet objects and returns an array of pet objects with no pets of type 'Fish'.
 
+    //     const pets = [
+    //     {
+    //         name: 'Sparky',
+    //         type: 'Fish',
+    //         age: 4
+    //     },
+    //     {
+    //         name: 'Mr. Pig',
+    //         type: 'Cat',
+    //         age: 4
+    //     },
+    //     {
+    //         name: 'Bubba',
+    //         type: 'Dog',
+    //         age: 5
+    //     },
+    //     {
+    //         name: 'Beans',
+    //         type: 'Dog',
+    //         age: 3
+    //     },
+    //     {
+    //         name: 'Mr. Salmon',
+    //         type: 'Fish',
+    //         age: 1
+    //     }
+    // ];
+    //
+    // returnPetsWithNoFish(pets) // returns...
+    //
+    // function returnPetsWithNoFish(pets)
+    // {
+    //     let noFishPets = []
+    //
+    //     for(let i = 0 ; i < pets.length; i++){
+    //         let pet = pets[i];
+    //         if (pet.type !== "Fish") {
+    //             noFishPets.push(pet);
+    //         }
+    //     }
+    //     return noFishPets;
+    // }
+    //
+    // console.log(returnPetsWithNoFish(pets));
+
+
+
+        // [
+        // {
+        //     name: 'Mr. Pig',
+        //     type: 'Cat',
+        //     age: 4
+        // },
+        //     {
+        //         name: 'Bubba',
+        //         type: 'Dog',
+        //         age: 5
+        //     },
+        //     {
+        //         name: 'Beans',
+        //         type: 'Dog',
+        //         age: 3
+        //     }
+        // ]
+
+
+
+// ================================= WARM UP
+//
+//     Create a function, returnLongestPetName, that takes in a array of pet objects and returns a string of the longest name for a pet.
+
         const pets = [
         {
             name: 'Sparky',
@@ -282,43 +353,26 @@ function showBookInfo(book){
         }
     ];
 
-    returnPetsWithNoFish(pets) // returns...
+    returnLongestPetName(pets) // returns 'Mr. Salmon'
 
-    function returnPetsWithNoFish(pets)
+
+
+
+    function returnLongestPetName(pets)
     {
-        let noFishPets = []
+        let max_str = pets[0].name;
 
-        for(let i = 0 ; i < pets.length; i++){
-            let pet = pets[i];
-            if (pet.type !== "Fish") {
-                noFishPets.push(pet);
+        for (let i = 0; i < pets.length; i++) {
+
+            if (pets[i].name.length > max_str.length) {
+                max_str = pets[i].name
             }
         }
-        return noFishPets;
+        return max_str;
     }
 
-    console.log(returnPetsWithNoFish(pets));
 
-
-
-        // [
-        // {
-        //     name: 'Mr. Pig',
-        //     type: 'Cat',
-        //     age: 4
-        // },
-        //     {
-        //         name: 'Bubba',
-        //         type: 'Dog',
-        //         age: 5
-        //     },
-        //     {
-        //         name: 'Beans',
-        //         type: 'Dog',
-        //         age: 3
-        //     }
-        // ]
-
+    console.log(returnLongestPetName(pets));
 
 
 })();
