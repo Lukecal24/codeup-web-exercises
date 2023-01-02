@@ -35,4 +35,5 @@ function returnLastCharsReversed(input,integer){
     return input.slice(-integer).split("").reverse().join("");
 }
 
+
 console.log(returnLastCharsReversed("Aphex", 3));
