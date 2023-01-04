@@ -52,7 +52,26 @@
 // function iBeforeE(input){
 //     return input.replaceAll("ei","ie")
 // }
-function iBeforeE(string) {
-    return string.split("ei").join("ie");
+// function iBeforeE(string) {
+//     return string.split("ei").join("ie");
+// }
+// console.log(iBeforeE("height"));
+
+
+// ================================= WARM UP
+// Create a function, filterList, that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+// filterList([1,2,‘a’,‘b’]) // returns [1,2]
+// filterList([1,‘a’,‘b’,0,15]) // returns [1,0,15]
+// filterList([1,2,‘aasf’,‘1’,‘123’,123]) // returns [1,2,123]
+
+
+function filterList(input){
+    return input.filter(function(x){
+        if (typeof(x) === "number")
+            return true;
+
+    });
 }
-console.log(iBeforeE("height"));
+
+
+console.log(filterList([1, 'a', 'b', 0, 15]));
