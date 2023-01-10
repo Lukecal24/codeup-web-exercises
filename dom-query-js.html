@@ -41,19 +41,36 @@
         subHeader.setAttribute("style", "color: blue");
 
         // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName("li");
-        console.log(listItems[0])
-        for (var i = 0; i < listItems.length; i++) {
+        let listItems = document.getElementsByTagName("li");
+        // console.log(listItems[0])
+        for (let i = 0; i < listItems.length; i++) {
             console.log(listItems[i]);
         };
 
         // TODO: Set text color on every other list item to grey
+        let listItemsColor = document.getElementsByTagName("li");
+        // console.log(listItemsColor[0])
+        for (let i = 0; i < listItemsColor.length; i++) {
+            if(i % 2 === 1)
+                listItemsColor[i].style.color= "grey";
+        };
+
+
+
         // TODO: Set text color of li with dbid = 1 to blue
+        for (let i = 0; i < listItems.length; i++) {
+            if(listItems[i].getAttribute("data-dbid") === "1"){
+                listItems[i].style.color = "blue";
+            }
+        }
+
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        let subParagraphs = document.getElementsByClassName("sub-paragraph");
+        // console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        subParagraphs[0].innerHTML= "Mission Accomplished!";
     })();
 </script>
 
