@@ -65,7 +65,7 @@
         //     }
         // }
         // // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // let subParagraphs = document.getElementsByClassName("sub-paragraph");
+        let subParagraphs = document.getElementsByClassName("sub-paragraph");
         // // console.log(subParagraphs);
         //
         // // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
@@ -74,10 +74,10 @@
         //Event listener exercise
 
         //getting buttons
-        var button1 = document.querySelector('#btn1');
-        var button2 = document.querySelector("#btn2");
-        var button3 = document.querySelector("#btn3");
-        var button4 = document.querySelector("#btn4");
+        let button1 = document.querySelector('#btn1');
+        let button2 = document.querySelector("#btn2");
+        let button3 = document.querySelector("#btn3");
+        let button4 = document.querySelector("#btn4");
 
         // button1.addEventListener("click", function() {
         //     mainHeader.innerHTML = "JavaScript is Cool";
@@ -95,17 +95,17 @@
             let listItemsColor = document.getElementsByTagName("li");
             // console.log(listItemsColor[0])
             for (let i = 0; i < listItemsColor.length; i++) {
-                if(i % 2 === 1)
-                    listItemsColor[i].style.color= "grey";
-            };
+                if(i % 2 === 1) {
+                    listItemsColor[i].style.color = "grey";
+                }
+                if(listItems[i].getAttribute("data-dbid") === "1"){
+                    listItems[i].style.color = "blue";
+                }
+            }
         });
 
         button4.addEventListener( "click", () =>{
-            for (let i = 0; i < listItems.length; i++) {
-                    if(listItems[i].getAttribute("data-dbid") === "1"){
-                        listItems[i].style.color = "blue";
-                    }
-                }
+            subParagraphs[0].innerHTML= "Mission Accomplished!";
         });
 
 
