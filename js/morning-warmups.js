@@ -184,3 +184,42 @@ for (let i = 0; i < 10; i++) {
 }
 
 // desired output : 0, 1 ,2,  3, 4, 5, 6, 7, 8, 9
+
+
+
+// Create a function, shiftElementsOver, that takes in an array and returns the array with all elements moved one index further into the array. The final element should be moved to the front. Assume the input array will have three or more elements.
+
+
+// console.log(shiftElementsOver([1, 2, 3, 4, 5])) // returns [5, 1, 2, 3, 4]
+// shiftElementsOver(['bob', 'sally', 'mary']) // returns ['mary', 'bob', 'sally']
+// shiftElementsOver([null, 123, 'hello world', true]) // returns [true, null, 123, 'hello world']
+//
+// function shiftElementsOver(arr) {
+//     let last = arr.pop();
+//     arr.unshift(last);
+//     return arr;
+// }
+
+
+// quizz tests
+// var isColdOutside = true;
+//
+// var clothingToWear;
+//
+// if (isColdOutside) {
+//     clothingToWear = 'sweater and a jacket';
+// } else {
+//     clothingToWear = 'shorts and a t-shirt';
+// }
+//
+// var clothingToWear = isColdOutside ? 'sweater and a jacket' : 'shorts and a t-shirt';
+//
+// var clothingToWear = isColdOutside ? 'shorts and a t-shirt' : 'sweater and a jacket';
+
+
+console.log(10 % 3);
+
+
+var array = ['John', 'Paul', 'George', 'Ringo', 'Santana'];
+
+
