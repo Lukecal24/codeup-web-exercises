@@ -6,12 +6,51 @@
 </head>
 <body>
 
+<h1 id="header1" class="codeup">My header</h1>
 
-<script src="./js/jquery-3.6.3.js"></script>
+<p id="paragraph1" class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem deserunt dicta dolor est iste, itaque iusto maiores obcaecati odit, perferendis porro quod sit unde voluptatibus? Eos, labore saepe? Voluptas.</p>
+
+<ul id="ul1" class="list">list
+    <li id="item1" class="codeup">item 1</li>
+    <li id="item2" class="list-item">item 2</li>
+    <li id="item3" class="list-item">item 3</li>
+</ul>
+
+<div id="div1" class="div">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis doloribus ea est et eveniet fugit id, illum laborum nisi nobis nostrum officia repellat repellendus rerum saepe soluta suscipit ullam vitae.</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script>
-    $(function() {
-        alert( 'The DOM has finished loading!' );
-    });
+
+    // $(function() {
+    //     alert( 'The DOM has finished loading!' );
+    // });
+
+//id selectors
+//     let contents = $('#item1').text();
+//     alert(contents);
+
+// //class selectors
+//    $('.codeup').css('border', '1px solid red');
+//
+
+//element selectors
+    $('li').css('font-size', '20px');
+    // $("li").css('background', 'yellow');
+
+    $("h1, li, p").css('background', 'yellow');
+
+    function alertHeader (input){
+        let contents = $(input).html();
+        alert(contents);
+    };
+
+    alertHeader('h1');
+
+    // $("p").css('background', 'yellow');
+
+
+
+
 </script>
 </body>
 </html>
