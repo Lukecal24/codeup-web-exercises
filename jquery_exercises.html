@@ -34,20 +34,54 @@
 //
 
 //element selectors
-    $('li').css('font-size', '20px');
-    // $("li").css('background', 'yellow');
-
-    $("h1, li, p").css('background', 'yellow');
-
-    function alertHeader (input){
-        let contents = $(input).html();
-        alert(contents);
-    };
-
-    alertHeader('h1');
+//     $('li').css('font-size', '20px');
+//     // $("li").css('background', 'yellow');
+//
+//     $("h1, li, p").css('background', 'yellow');
+//
+//     function alertHeader (input){
+//         let contents = $(input).html();
+//         alert(contents);
+//     };
+//
+//     alertHeader('h1');
 
     // $("p").css('background', 'yellow');
 
+//mouse events exercise
+//    1. Add jQuery code that will change the background color of an h1 element when clicked
+//     $(function(){
+        $("h1").click(function () {
+            $(this).css('background', 'blue');
+        });
+    // });
+
+
+//    2. Make all paragraphs have a font size of 18px when they are double clicked.
+        $('p').dblclick(function(){
+            $(this).css('font-size', '18px');
+        });
+
+//    3. Set all li text color to red when the mouse is hovering; reset to black when it is not.
+
+
+    $('document').ready(function() {
+        $('li').hover(
+            function() {
+                $(this).css('color', 'red');
+            },
+            function() {
+                $(this).css('color', 'black');
+            }
+        );
+    });
+
+
+
+
+        // $('li').hover(function(){
+        //    $(this).toggle().css('color','red');
+        // });
 
 
 
