@@ -314,6 +314,10 @@ console.log(encodeStr('SASS')) // returns ‘$@$$’
 console.log(encodeStr('bike')) // returns ‘b1ke’
 
 function encodeStr(input){
-    return input.toLowerCase().replaceAll('a','@').replaceAll('i','1').replaceAll('s','$');
+    return input
+        .toLowerCase()
+        .replaceAll('a','@')
+        .replaceAll('i','1')
+        .replaceAll('s','$');
 }
 
