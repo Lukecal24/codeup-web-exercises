@@ -308,16 +308,16 @@
 // ‘i’ or ‘I’ becomes ‘1’
 // ‘s’ or ‘S’ becomes ‘$’
 //
-console.log(encodeStr('apple')) // returns ‘@pple’
-console.log(encodeStr('codeup')) // returns ‘codeup’
-console.log(encodeStr('SASS')) // returns ‘$@$$’
-console.log(encodeStr('bike')) // returns ‘b1ke’
-
-function encodeStr(input){
-    return input
-        .toLowerCase()
-        .replaceAll('a','@')
-        .replaceAll('i','1')
-        .replaceAll('s','$');
-}
+// console.log(encodeStr('apple')) // returns ‘@pple’
+// console.log(encodeStr('codeup')) // returns ‘codeup’
+// console.log(encodeStr('SASS')) // returns ‘$@$$’
+// console.log(encodeStr('bike')) // returns ‘b1ke’
+//
+// function encodeStr(input){
+//     return input
+//         .toLowerCase()
+//         .replaceAll('a','@')
+//         .replaceAll('i','1')
+//         .replaceAll('s','$');
+// }
 
