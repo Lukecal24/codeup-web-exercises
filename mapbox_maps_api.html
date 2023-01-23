@@ -154,6 +154,7 @@
     favFoods.forEach(function(favFoods) {
         geocode(favFoods.address, keys.mapbox).then(function (result) {
             console.log(result[0]);
+            console.log(result[1]);
 
             let marker = new mapboxgl.Marker()
                 .setLngLat([result[0],result[1]])
@@ -169,6 +170,10 @@
         });
     })
 
+
+
 </script>
 </body>
 </html>
+
+

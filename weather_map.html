@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Weather Map</title>
+    <link rel="icon" type="image/x-icon" href="https://winaero.com/blog/wp-content/uploads/2019/09/MSN-Weather-icon.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+    <!-- Mapbox CSS -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+    <!--Geocoder-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+
+<!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/weathermap.css">
+</head>
+<body>
+<div class="page-wrapper">
+    <header class="container-fluid bg-primary text-light py-2">
+        <div class="row">
+        <h1>Weather Map</h1>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <div class="row full-width">
+            <div class="column">
+                <div id="weather"></div>
+            </div>
+        </div>
+        <div class="row full-width my-3">
+            <div class="column">
+
+                <div id='map'>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<!--bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<!--Keys-->
+<script src="js/keys.js"></script>
+
+<!--Mapbox geocoder-->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+<!--Mapbox JS-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+
+<!--jquery??-->
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous">
+
+</script>
+
+<script>
+    "use strict";
+
+    //make geocode
+    geocode('San Antonio',keys.mapbox).then(function (result) {
+        console.log(result[0]);
+        console.log(result[1]);
+
+
+
+    //open weather
+    $.get('https://api.openweathermap.org/data/2.5/forecast', {
+        lat: result[0],
+        lon: result[1],
+        appid: keys.openWeather,
+        units: 'imperial'
+    }).done(function(data) {
+        // can be used to get forecast conditions at current time in increments of 24 hours
+
+        let html = '';
+
+        for (let i = 0; i < data.list.length; i += 8) {
+            html +=
+                `<div>
+                <tr>
+                    <th>${data.main[i]}</th>
+                    <td>${data.main[i]}</td>
+                    <td>${data.list[i]}</td>
+                    <td>${data.list[i]}</td>
+                </tr>
+                </div>`;
+            // console.log(data.list[i]);
+
+
+        }
+    }).fail(function(jqXhr, status, error) {
+        console.log(jqXhr);
+        console.log(status);
+        console.log(error);
+    })
+    });
+
+
+    //mapbox
+    mapboxgl.accessToken = keys.mapbox;
+    const map = new mapboxgl.Map({
+        container: 'map', // Container ID
+        style: 'mapbox://styles/mapbox/streets-v12', // Map style to use
+        center: [-98.4916, 29.4252], // Starting position [lng, lat]
+        zoom: 12, // Starting zoom level
+    });
+
+
+    const marker = new mapboxgl.Marker() // initialize a new marker
+        .setLngLat([-98.493629, 29.424122]) // Marker [lng, lat] coordinates
+        .addTo(map); // Add the marker to the map
+
+
+    const geocoder = new MapboxGeocoder({
+        // Initialize the geocoder
+        accessToken: mapboxgl.accessToken, // Set the access token
+        mapboxgl: mapboxgl, // Set the mapbox-gl instance
+        marker: false // Do not use the default marker style
+    });
+
+
+    // Add the geocoder to the map
+    map.addControl(geocoder);
+
+    // After the map style has loaded on the page,
+    // add a source layer and default styling for a single point
+    map.on('load', () => {
+        map.addSource('single-point', {
+            type: 'geojson',
+            data: {
+                type: 'FeatureCollection',
+                features: []
+            }
+        });
+
+        map.addLayer({
+            id: 'point',
+            source: 'single-point',
+            type: 'circle',
+            paint: {
+                'circle-radius': 10,
+                'circle-color': '#448ee4'
+            }
+        });
+
+        // Listen for the `result` event from the Geocoder
+        // `result` event is triggered when a user makes a selection
+        //  Add a marker at the result's coordinates
+        geocoder.on('result', (event) => {
+            map.getSource('single-point').setData(event.result.geometry);
+        });
+    });
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
