@@ -36,7 +36,7 @@ $(`#search`).on(`click`, function(){
             console.log(data);
             let html = '';
             for (let i = 0; i < data.list.length; i += 8) {
-                html += `<div class="card m-2 bg-dark text-light border border-secondary"" style="width: 18rem;">
+                html += `<div class="card m-2 bg-dark text-light border border-secondary" style="width: 18rem;">
                     <div class="card-header">
                     <div>${data.list[i].dt_txt.slice(0,10)}</div>
                     </div>

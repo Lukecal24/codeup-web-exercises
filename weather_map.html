@@ -21,18 +21,18 @@
     <link rel="stylesheet" href="css/weathermap.css">
 </head>
 <body>
-<div class="page-wrapper">
-    <header class="container-fluid bg-primary text-light py-2">
+<div class="page-wrapper bg-dark">
+    <header class="container-fluid bg-secondary text-light py-2 border border-secondary">
         <div class="row">
-        <h1>Weather Map</h1>
-            <div class="width-50">
+        <h1 class="text-center">Weather Map</h1>
+            <div class="px-5 width-50">
             <label>Look up place</label>
-            <input id="location" placeholder="City name....">
-            <button id="search" type="submit">Search</button>
+            <input class="shadow-sm p-1 m-1 bg-body-tertiary rounded" id="location" placeholder="City name....">
+            <button class="shadow-sm p-1 bg-body-tertiary rounded" id="search" type="submit">Search</button>
             </div>
         </div>
     </header>
-    <main class="container-fluid bg-dark">
+    <main class="container bg-dark h-100">
         <div class="row full-width">
             <div class="column">
                 <div class="d-flex" id="weather"></div>
@@ -60,8 +60,6 @@
 
 <!--Mapbox JS-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
-
-
 
 <!--jquery??-->
 <script
