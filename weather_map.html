@@ -9,6 +9,8 @@
 
     <!-- Mapbox CSS -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+    <!--Mapbox geocoder-->
+    <script src="js/mapbox-geocoder-utils.js"></script>
     <!--Geocoder-->
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
@@ -71,37 +73,42 @@
         console.log(result[1]);
 
 
-
+updateWeather();
     //open weather
-    $.get('https://api.openweathermap.org/data/2.5/forecast', {
-        lat: result[0],
-        lon: result[1],
-        appid: keys.openWeather,
-        units: 'imperial'
-    }).done(function(data) {
-        // can be used to get forecast conditions at current time in increments of 24 hours
+    function updateWeather() {
+        $.get('https://api.openweathermap.org/data/2.5/forecast', {
+            lat: result[0],
+            lon: result[1],
+            appid: keys.openWeather,
+            units: 'imperial'
 
-        let html = '';
+        }).done(function (data) {
+            // can be used to get forecast conditions at current time in increments of 24 hours
+            console.log(data);
 
-        for (let i = 0; i < data.list.length; i += 8) {
-            html +=
-                `<div>
+            for (let i = 0; i < data.list.length; i += 8) {
+                let html = '';
+
+                html +=
+                    `<div>
                 <tr>
-                    <th>${data.main[i]}</th>
-                    <td>${data.main[i]}</td>
+                    <th>${data.list[i]}</th>
+                    <td>${data.list[i]}</td>
                     <td>${data.list[i]}</td>
                     <td>${data.list[i]}</td>
                 </tr>
                 </div>`;
-            // console.log(data.list[i]);
+                // console.log(data.list[i]);
 
 
-        }
-    }).fail(function(jqXhr, status, error) {
-        console.log(jqXhr);
-        console.log(status);
-        console.log(error);
-    })
+            }
+        }).fail(function (jqXhr, status, error) {
+            console.log(jqXhr);
+            console.log(status);
+            console.log(error);
+
+        })
+    }
     });
 
 
@@ -158,6 +165,7 @@
         geocoder.on('result', (event) => {
             map.getSource('single-point').setData(event.result.geometry);
         });
+
     });
 
 
