@@ -16,7 +16,6 @@ $(`#search`).on(`click`, function(){
     geocode(userLocation, keys.mapbox).then(function (result){
         map.setCenter(result);
         map.setZoom(10);
-
         let marker = new mapboxgl.Marker({
             draggable: true
         })
@@ -25,6 +24,7 @@ $(`#search`).on(`click`, function(){
         function onDragEnd() {
             map.addControl(geocode);
             let lngLat = marker.getLngLat()
+
         }
         $.get('https://api.openweathermap.org/data/2.5/forecast', {
             lat: result[1],
