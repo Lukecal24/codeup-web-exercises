@@ -10,7 +10,7 @@ const map = new mapboxgl.Map({
 });
 
 
-
+//click event
 $(`#search`).on(`click`, function(){
     let userLocation = $(`#location`).val();
     geocode(userLocation, keys.mapbox).then(function (result){
@@ -26,6 +26,7 @@ $(`#search`).on(`click`, function(){
             let lngLat = marker.getLngLat()
 
         }
+        //hit weather API
         $.get('https://api.openweathermap.org/data/2.5/forecast', {
             lat: result[1],
             lon: result[0],
@@ -34,6 +35,7 @@ $(`#search`).on(`click`, function(){
 
         }).done(function(data){
             console.log(data);
+            //print weather info
             let html = '';
             for (let i = 0; i < data.list.length; i += 8) {
                 html += `<div class="card m-2 bg-dark text-light border border-secondary" style="width: 18rem;">
