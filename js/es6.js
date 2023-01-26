@@ -62,15 +62,13 @@ let names = [];
 //   return emails.push(user.email);
 // });
 
-users.forEach((user)=>{
-  return emails.push(user.email);
-});
+users.forEach((user)=> emails.push(user.email));//this is one line so it doesn't need the bracket or return
 
 // users.forEach(function(user) {
 //   return names.push(user.name);
 // });
 
-users.forEach((user)=>{
+users.forEach((user)=>{  //I included bracket and return just to show you can still do it this way
   return names.push(user.name);
 });
 
@@ -89,7 +87,8 @@ users.forEach(function(user) {
   // TODO: rewrite the assignment below to use template strings
 //   developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
 // });
-  developers.push(`${name}'s email is ${email}. ${name} knows ${languages} `);
+  let formattedName = name.charAt(0).toUpperCase() + name.slice(1)
+  developers.push(`${formattedName}'s email is ${email}. ${formattedName} knows ${languages.join(",")} `);
 });
 console.log(developers);
 
@@ -97,10 +96,14 @@ console.log(developers);
 let list = '<ul>';
 
 // TODO: rewrite the following loop to use a for..of loop
-developers.forEach(function (developer) {
-// developers.for(let ){
+// developers.forEach(function (developer) {
+
 
   // TODO: rewrite the assignment below to use template strings
-  list += '<li>' + developer + '</li>';
-});
+//   list += '<li>' + developer + '</li>';
+// });
+for(let developer of developers){
+  list += `<li>${developer}</li>`;
+}
 list += '</ul>';
+console.log(list);
