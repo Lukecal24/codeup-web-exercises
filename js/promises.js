@@ -21,20 +21,29 @@
 
 
     async function getUsers (username) {
-        const response = await fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': `token ${keys.github}` }});
-        const events = await response.json();
-        for(let event of events){
-          if(event.type === "PushEvent"){
-              return event.created_at;
-          }
+        try {
+            const response = await fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': `token ${keys.github}`}});
+            const events = await response.json();
+            for (let event of events) {
+                if (event.type === "PushEvent") {
+                    return event.created_at;
+                }
+            }
+
+        } catch (error) {
+            console.log(error)
         }
 
-        // console.log(data);
     };
 
-    getUsers("Lukecal24")
-        .then(date => console.log(date))
-        .catch((error)=>console.error(error));
+    (async () => {
+      let newUser = await getUsers("Lukecal24");
+        console.log(newUser);
+    })();
+
+    // getUsers("Lukecal24")
+    //     .then(date => console.log(date))
+    //     .catch((error)=>console.error(error));
 
 
 
