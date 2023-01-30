@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM warmups</title>
+    <style>
+        .red {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper"></div>
+<button id="button">Click here. Or ELSE!</button>
+
+
+<script src="js/jquery-3.6.3.js"></script>
+<script>
+(function () {
+  "use strict"
+
+
+    $("button").on("click",function () {
+      $("body").toggleClass("red");
+    });
+
+
+
+
+
+
+
+
+
+
+})();
+</script>
+</body>
+</html>
