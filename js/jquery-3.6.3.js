@@ -3922,7 +3922,7 @@ jQuery.extend( {
 
 							// Support: Promises/A+ section 2.3.3.3.1
 							// https://promisesaplus.com/#point-57
-							// Re-resolve promises immediately to dodge false rejection from
+							// Re-resolve promises.js immediately to dodge false rejection from
 							// subsequent errors
 							if ( depth ) {
 								process();

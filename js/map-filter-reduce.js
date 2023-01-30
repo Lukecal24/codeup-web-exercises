@@ -56,7 +56,7 @@ console.log(emails);
 let years = users.reduce((preValue,currentValue) =>{
     return(preValue += currentValue.yearsOfExperience)
 }, 0)
-console.log(years / 5);
+console.log(years / users.length);
 //5. Use .reduce to get the longest email from the list of users.
 let longEmail = users.reduce((longest,user) =>{
     return user.email.length > longest.length ? user.email : longest;
