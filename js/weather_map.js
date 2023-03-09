@@ -19,8 +19,9 @@ $(`#search`).on(`click`, function(){
         let marker = new mapboxgl.Marker({
             draggable: true
         })
-            .setLngLat([-98.4916, 29.4252])
+            .setLngLat(result)
             .addTo(map);
+
         function onDragEnd() {
             map.addControl(geocode);
             let lngLat = marker.getLngLat()
