@@ -14,14 +14,12 @@ const map = new mapboxgl.Map({
 $(`#search`).on(`click`, function(){
     let userLocation = $(`#location`).val();
     geocode(userLocation, keys.mapbox).then(function (result){
-        map.setCenter(result);
-        map.setZoom(10);
+        map.flyTo({ center: result, zoom: 10, speed: 1.2 });
         let marker = new mapboxgl.Marker({
             draggable: true
         })
             .setLngLat(result)
             .addTo(map);
-
         function onDragEnd() {
             map.addControl(geocode);
             let lngLat = marker.getLngLat()
