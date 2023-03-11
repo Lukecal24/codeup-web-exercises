@@ -10,12 +10,19 @@ const map = new mapboxgl.Map({
 });
 
 
+
+let marker;
+
 //click event
 $(`#search`).on(`click`, function(){
     let userLocation = $(`#location`).val();
     geocode(userLocation, keys.mapbox).then(function (result){
+        //remove previous marker from map
+        if(marker) {
+            marker.remove();
+        }
         map.flyTo({ center: result, zoom: 10, speed: 1.2 });
-        let marker = new mapboxgl.Marker({
+        marker = new mapboxgl.Marker({
             draggable: true
         })
             .setLngLat(result)
