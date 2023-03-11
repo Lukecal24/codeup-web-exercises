@@ -1,5 +1,3 @@
-"use strict";
-
 //mapbox
 mapboxgl.accessToken = keys.mapbox;
 const map = new mapboxgl.Map({
@@ -9,12 +7,9 @@ const map = new mapboxgl.Map({
     zoom: 12, // Starting zoom level
 });
 
-
-
 let marker;
 
-//click event
-$(`#search`).on(`click`, function(){
+function searchLocation() {
     let userLocation = $(`#location`).val();
     geocode(userLocation, keys.mapbox).then(function (result){
         //remove previous marker from map
@@ -64,4 +59,14 @@ $(`#search`).on(`click`, function(){
             console.log(error);
         });
     });
+}
+
+$(`#search`).on(`click`, function(){
+    searchLocation();
+});
+
+$(`#location`).on('keyup', function(e) {
+    if (e.keyCode === 13) {
+        searchLocation();
+    }
 });
